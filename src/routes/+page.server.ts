@@ -1,11 +1,11 @@
-import { fetchJSON } from '$lib/site/posts';
-import { error } from '@sveltejs/kit';
+import { fetchJSON } from '$lib/site/posts'
+import { error } from '@sveltejs/kit'
 
 export async function load({ fetch }) {
 	try {
-		const posts = await fetchJSON('/api/posts', fetch);
-		return { posts: posts.slice(0, 6) };
+		const posts = await fetchJSON('/api/posts', fetch)
+		return { posts: posts.slice(0, 6) }
 	} catch (e) {
-		throw error(404, (e as Error).message);
+		throw error(404, (e as Error).message)
 	}
 }

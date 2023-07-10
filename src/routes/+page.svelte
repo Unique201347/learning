@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { ArrowNarrowRightIcon } from '@rgossiaux/svelte-heroicons/outline';
+	import { ArrowNarrowRightIcon } from '@rgossiaux/svelte-heroicons/outline'
 
-	import Posts from '$lib/ui/posts.svelte';
-	import * as config from '$lib/site/config';
+	import Posts from '$lib/ui/posts.svelte'
+	import * as config from '$lib/site/config'
 
-	export let data;
+	export let data
 
-	const { posts } = data;
+	const { posts } = data
 </script>
 
 <svelte:head>
