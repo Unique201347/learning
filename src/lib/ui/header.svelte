@@ -1,10 +1,9 @@
 <script lang="ts">
-	import Menu from './menu.svelte'
-	import Preferences from './preferences/index.svelte'
-	import * as config from '$lib/site/config'
+	import Menu from './menu.svelte';
+	import * as config from '$lib/site/config';
 
-	let scrollY: number
-	$: sticky = scrollY > 0
+	let scrollY: number;
+	$: sticky = scrollY > 0;
 </script>
 
 <svelte:window bind:scrollY />
@@ -16,7 +15,6 @@
 		</div>
 
 		<nav>
-			<Preferences />
 			<Menu />
 		</nav>
 	</div>

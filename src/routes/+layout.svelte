@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition'
+	import { fly } from 'svelte/transition';
 
-	import Header from '$lib/ui/header/header.svelte'
-	import '../styles/styles.scss'
-	import Footer from '$lib/ui/footer.svelte'
+	import Header from '$lib/ui/header.svelte';
+	import '../styles/styles.scss';
+	import Footer from '$lib/ui/footer.svelte';
 
-	export let data
+	export let data;
 </script>
 
 <div>

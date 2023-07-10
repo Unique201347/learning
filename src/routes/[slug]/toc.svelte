@@ -1,40 +1,38 @@
 <script lang="ts">
-	import { onMount } from 'svelte'
-	import { fly } from 'svelte/transition'
-	import ChevronDoubleLeft from '@rgossiaux/svelte-heroicons/outline/ChevronDoubleLeft'
-	import ChevronDoubleRight from '@rgossiaux/svelte-heroicons/outline/ChevronDoubleRight'
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
+	import ChevronDoubleLeft from '@rgossiaux/svelte-heroicons/outline/ChevronDoubleLeft';
+	import ChevronDoubleRight from '@rgossiaux/svelte-heroicons/outline/ChevronDoubleRight';
 
-	let tableOfContents = null
-	let showSidebar = false
+	let tableOfContents: string | null = null;
+	let showSidebar = false;
 
 	function getTableOfContents() {
 		const postTableOfContentsEl = document.querySelector(
 			'#table-of-contents + ul'
-		) as HTMLUListElement
-		tableOfContents = postTableOfContentsEl.outerHTML
+		) as HTMLUListElement;
+		tableOfContents = postTableOfContentsEl.outerHTML;
 	}
 
 	function openSidebar() {
-		const targetEl = document.querySelector('#table-of-contents + ul')
+		const targetEl = document.querySelector('#table-of-contents + ul');
 		const observer = new IntersectionObserver(([entry]) => {
-			entry.boundingClientRect.bottom < 0
-				? (showSidebar = true)
-				: (showSidebar = false)
-		})
-		observer.observe(targetEl)
+			entry.boundingClientRect.bottom < 0 ? (showSidebar = true) : (showSidebar = false);
+		});
+		observer.observe(targetEl!!);
 
 		return () => {
-			observer.unobserve(targetEl)
-		}
+			observer.unobserve(targetEl!!);
+		};
 	}
 
 	onMount(() => {
-		getTableOfContents()
-		return openSidebar()
-	})
+		getTableOfContents();
+		return openSidebar();
+	});
 
 	function toggleSidebar() {
-		showSidebar = !showSidebar
+		showSidebar = !showSidebar;
 	}
 </script>
 
@@ -47,17 +45,14 @@
 				class="sidebar-toggle"
 				aria-label="Show table of contents"
 			>
-				<ChevronDoubleLeft width="24" height="24" aria-hidden="true" />
+				<ChevronDoubleLeft width="20" height="20" aria-hidden="true" />
 			</button>
 		{/if}
 
 		{#if showSidebar}
-			<div
-				class="table-of-contents"
-				transition:fly={{ x: '100%', duration: 300 }}
-			>
+			<div class="table-of-contents" transition:fly={{ x: '100%', duration: 300 }}>
 				<button on:click={toggleSidebar} aria-label="Hide table of contents">
-					<ChevronDoubleRight width="24" height="24" aria-hidden="true" />
+					<ChevronDoubleRight width="20" height="20" aria-hidden="true" />
 				</button>
 
 				<h2 class="table-of-contents-title">Table of contents</h2>
@@ -74,7 +69,7 @@
 		top: 50%;
 		right: 8px;
 		translate: 0% -50%;
-		z-index: 10;
+		z-index: 1;
 	}
 
 	.sidebar-toggle,

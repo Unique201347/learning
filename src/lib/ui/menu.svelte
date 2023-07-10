@@ -1,14 +1,10 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition'
-	import {
-		Popover,
-		PopoverButton,
-		PopoverPanel,
-	} from '@rgossiaux/svelte-headlessui'
-	import { MenuAlt1Icon } from '@rgossiaux/svelte-heroicons/outline'
+	import { fade } from 'svelte/transition';
+	import { Popover, PopoverButton, PopoverPanel } from '@rgossiaux/svelte-headlessui';
+	import { MenuAlt1Icon } from '@rgossiaux/svelte-heroicons/outline';
 
-	import * as config from '$lib/site/config'
-	import { sounds } from '$lib/stores/sfx'
+	import * as config from '$lib/site/config';
+	import { sounds } from '$lib/stores/sfx';
 </script>
 
 <div class="container">

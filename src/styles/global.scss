@@ -96,11 +96,8 @@ body {
 	}
 }
 
-/* fixes issue where safari applies focus to body  */
 body *:focus {
 	outline: none;
-	box-shadow: 0 0 0 4px var(--clr-primary);
-	border-radius: var(--rounded-20);
 }
 
 html[data-font='dyslexic'] body,
@@ -158,25 +155,27 @@ a:hover {
 	color: var(--clr-primary);
 }
 
-a::before {
-	content: '';
-	width: 100%;
-	height: 100%;
-	display: block;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	transform: scaleX(0);
-	transform-origin: left;
-	transition: transform 0.3s ease;
-	background-color: var(--clr-link-background);
-	border-radius: 4px;
-	z-index: -1;
-}
+// a::before {
+// 	content: '';
+// 	width: 100%;
+// 	height: 100%;
+// 	display: block;
+// 	position: absolute;
+// 	bottom: 0;
+// 	left: 0;
+// 	transform: scaleX(0);
+// 	transform-origin: left;
+// 	transition: transform 0.3s ease;
+// 	background-color: var(--clr-link-background);
+// 	border-radius: 4px;
+// 	z-index: -1;
+// }
 
-a:hover::before {
-	transform: scaleX(1);
-}
+// a:hover::before {
+// 	transform: scaleX(1);
+// }
+
+
 
 table {
 	margin-bottom: var(--spacing-32);
